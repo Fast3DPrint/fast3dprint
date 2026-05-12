@@ -90,3 +90,33 @@ if (savedColor) document.documentElement.style.setProperty("--primary", savedCol
 
 renderProducts();
 renderCart();
+async function loadProductsFromCMS() {
+  const container = document.querySelector("#products-list");
+  if (!container) return;
+
+  const response = await fetch("/products.json?v=" + Date.now());
+  const data = await response.json();
+  const products = data.items || [];
+
+  container.innerHTML = "";
+
+  products.forEach(product => {
+    const card = document.createElement("div");
+    card.className = "product-card";
+
+    card.innerHTML = `
+      <img src="${product.image}" alt="${product.title}">
+      <h3>${product.title}</h3>
+      <p>${product.description}</p>
+      <strong>${product.price}€</strong>
+      <div class="product-actions">
+        <a class="btn" href="https://wa.me/393471232958?text=Ciao,%20sono%20interessato%20a:%20${encodeURIComponent(product.title)}" target="_blank">Ordina su WhatsApp</a>
+        ${product.etsy ? `<a class="btn secondary" href="${product.etsy}" target="_blank">Compra su Etsy</a>` : ""}
+      </div>
+    `;
+
+    container.appendChild(card);
+  });
+}
+
+loadProductsFromCMS();
