@@ -6,13 +6,19 @@ media_folder: "images"
 public_folder: "/images"
 
 collections:
-  - name: "prodotti"
-    label: "Prodotti"
-    folder: "prodotti"
-    create: true
-    slug: "{{slug}}"
-    fields:
-      - { label: "Nome", name: "title", widget: "string" }
-      - { label: "Descrizione", name: "body", widget: "text" }
-      - { label: "Prezzo", name: "price", widget: "string" }
-      - { label: "Immagine", name: "image", widget: "image" }
+  - name: "catalogo"
+    label: "Catalogo"
+    files:
+      - name: "prodotti"
+        label: "Prodotti"
+        file: "products.json"
+        fields:
+          - label: "Prodotti"
+            name: "items"
+            widget: "list"
+            fields:
+              - { label: "Nome", name: "title", widget: "string" }
+              - { label: "Descrizione", name: "description", widget: "text" }
+              - { label: "Prezzo", name: "price", widget: "string" }
+              - { label: "Immagine", name: "image", widget: "image" }
+              - { label: "Link Etsy", name: "etsy", widget: "string", required: false }
