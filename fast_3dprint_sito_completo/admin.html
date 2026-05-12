@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin - fast_3dprint</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="logo">fast_<span>3dprint</span> Admin</div>
+    <nav>
+      <a href="index.html">Torna al sito</a>
+    </nav>
+  </header>
+
+  <main class="admin-page">
+    <section class="admin-card">
+      <h1>Gestione prodotti</h1>
+      <p class="small">
+        Qui puoi aggiungere/modificare prodotti direttamente dal sito. 
+        Nota: le modifiche restano salvate nel browser/dispositivo che usi.
+      </p>
+
+      <form id="productForm">
+        <input type="hidden" id="productId" />
+        <label>Nome prodotto</label>
+        <input id="name" required placeholder="Es. Portachiavi NFC" />
+
+        <label>Descrizione</label>
+        <textarea id="description" required placeholder="Descrizione del prodotto"></textarea>
+
+        <label>Prezzo indicativo (€)</label>
+        <input id="price" type="number" min="0" step="0.01" required placeholder="10" />
+
+        <label>URL immagine</label>
+        <input id="image" placeholder="images/prodotto.jpg oppure link immagine" />
+
+        <label>Link Etsy opzionale</label>
+        <input id="etsy" placeholder="https://fastmapic3dprint.etsy.com/..." />
+
+        <button class="btn primary" type="submit">Salva prodotto</button>
+        <button class="btn ghost" type="button" id="resetForm">Nuovo prodotto</button>
+      </form>
+    </section>
+
+    <section class="admin-card">
+      <h2>Prodotti salvati</h2>
+      <div id="adminProducts"></div>
+      <button class="btn secondary" id="exportProducts">Esporta prodotti</button>
+      <button class="btn ghost" id="resetProducts">Ripristina prodotti iniziali</button>
+      <p class="small">
+        Per rendere le modifiche visibili a tutti online, dovrai in futuro collegare un database o un CMS.
+      </p>
+    </section>
+  </main>
+
+  <script src="products.js"></script>
+  <script src="admin.js"></script>
+</body>
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>fast_3dprint - Stampe 3D personalizzate</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="logo">fast_<span>3dprint</span></div>
+    <nav>
+      <a href="#prodotti">Prodotti</a>
+      <a href="#personalizzati">Personalizzati</a>
+      <a href="#galleria">Galleria</a>
+      <a href="#contatti">Contatti</a>
+      <a href="admin.html" class="admin-link">Admin</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div>
+      <p class="tag">Stampa 3D • Personalizzazioni • Regali unici</p>
+      <h1>Oggetti 3D personalizzati, creati su misura per te</h1>
+      <p class="hero-text">
+        Portachiavi, lampade, gadget, idee regalo e prodotti personalizzati stampati in 3D.
+        Ordina direttamente su WhatsApp o visita il negozio Etsy.
+      </p>
+      <div class="hero-buttons">
+        <a class="btn primary" href="#prodotti">Vedi prodotti</a>
+        <a class="btn secondary" target="_blank" href="https://wa.me/393471232958?text=Ciao%2C%20vorrei%20informazioni%20sulle%20stampe%203D">Ordina su WhatsApp</a>
+      </div>
+    </div>
+    <div class="hero-card">
+      <h3>Personalizzazioni</h3>
+      <p>Nomi, loghi, dediche, colori e misure su richiesta.</p>
+      <strong>Spedizione in tutta Italia</strong>
+    </div>
+  </section>
+
+  <section class="color-panel">
+    <span>Cambia colore sito:</span>
+    <button data-color="#0077ff"></button>
+    <button data-color="#0f172a"></button>
+    <button data-color="#00a6c8"></button>
+    <button data-color="#7c3aed"></button>
+    <button data-color="#16a34a"></button>
+  </section>
+
+  <section id="prodotti" class="section">
+    <div class="section-title">
+      <h2>Prodotti in evidenza</h2>
+      <p>Catalogo modificabile dal pannello Admin.</p>
+    </div>
+    <div id="productGrid" class="grid"></div>
+  </section>
+
+  <section id="personalizzati" class="section split">
+    <div>
+      <h2>Hai un’idea personalizzata?</h2>
+      <p>
+        Posso realizzare oggetti su misura: portachiavi con nome, loghi aziendali,
+        decorazioni, gadget per eventi, regali per compleanni e molto altro.
+      </p>
+      <a class="btn primary" target="_blank" href="https://wa.me/393471232958?text=Ciao%2C%20vorrei%20realizzare%20un%20prodotto%203D%20personalizzato">Richiedi preventivo</a>
+    </div>
+    <ul class="feature-list">
+      <li>✅ Personalizzazioni su richiesta</li>
+      <li>✅ Anteprima prima della stampa</li>
+      <li>✅ Possibilità di scegliere colore e materiale</li>
+      <li>✅ Ritiro o spedizione</li>
+    </ul>
+  </section>
+
+  <section id="galleria" class="section">
+    <div class="section-title">
+      <h2>Galleria lavori</h2>
+      <p>Inserisci foto reali dei tuoi prodotti nella cartella images.</p>
+    </div>
+    <div class="gallery">
+      <div>Foto prodotto 1</div>
+      <div>Foto prodotto 2</div>
+      <div>Foto prodotto 3</div>
+    </div>
+  </section>
+
+  <section id="carrello" class="section cart-box">
+    <h2>Carrello</h2>
+    <div id="cartItems"></div>
+    <p class="total">Totale indicativo: <strong id="cartTotal">0€</strong></p>
+    <button class="btn primary" id="sendOrder">Invia ordine su WhatsApp</button>
+    <button class="btn ghost" id="clearCart">Svuota carrello</button>
+    <p class="small">Il pagamento può essere gestito su Etsy, WhatsApp o con accordo diretto.</p>
+  </section>
+
+  <footer id="contatti">
+    <h2>fast_3dprint</h2>
+    <p>Stampe 3D personalizzate e prodotti su richiesta.</p>
+    <div class="footer-links">
+      <a target="_blank" href="https://instagram.com/fast_3dprint">Instagram</a>
+      <a target="_blank" href="https://fastmapic3dprint.etsy.com">Etsy</a>
+      <a target="_blank" href="https://wa.me/393471232958">WhatsApp</a>
+    </div>
+  </footer>
+
+  <script src="products.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
